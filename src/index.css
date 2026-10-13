@@ -1,0 +1,90 @@
+:root {
+  --bg: #fff3f7;
+  --bg-dot: #ffd9e6;
+  --surface: #ffffff;
+  --border: #f6a9c3;
+  --text: #4a2b38;
+  --text-muted: #7a4a5c;
+  --accent: #d6002f;
+  --accent-soft: #ffe3ec;
+  --focus: #b00027;
+  --motif: #e4002b;
+  --motif-outline: #4a2b38;
+
+  --font-body: 'Nunito', ui-rounded, system-ui, sans-serif;
+  --font-heading: 'Fredoka', ui-rounded, system-ui, sans-serif;
+
+  color-scheme: light;
+}
+
+:root[data-theme='dark'] {
+  --bg: #15101d;
+  --bg-dot: #241a35;
+  --surface: #231a33;
+  --border: #6f52a8;
+  --text: #f4edff;
+  --text-muted: #cdbdea;
+  --accent: #ff8ccb;
+  --accent-soft: #35254f;
+  --focus: #ff8ccb;
+  --motif: #ff8ccb;
+  --motif-outline: #15101d;
+
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100svh;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--text);
+  background-color: var(--bg);
+  background-image: radial-gradient(var(--bg-dot) 4px, transparent 4.5px);
+  background-size: 32px 32px;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+p,
+ul {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
